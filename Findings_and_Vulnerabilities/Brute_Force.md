@@ -28,6 +28,10 @@ Burp Suite Intruder
 6. Compared HTTP status codes and response lengths.
 7. Investigated responses that differed from failed authentication attempts.
 
+## Security Impact
+
+An attacker could potentially automate login attempts if appropriate rate limiting, account lockout, or other protections are not implemented.
+
 ## Results
 
 The application returned different HTTP responses for tested credentials.
@@ -38,7 +42,3 @@ For example:
 - Successful authentication → HTTP 200
 
 This response difference can potentially be used to distinguish valid credentials from invalid ones.
-
-## Security Impact
-
-An attacker could potentially automate login attempts if appropriate rate limiting, account lockout, or other protections are not implemented.

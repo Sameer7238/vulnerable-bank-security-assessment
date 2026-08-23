@@ -1,0 +1,69 @@
+# Privilege Escalation via Registration
+
+## Objective
+
+Test whether the registration functionality properly restricts which user attributes can be controlled by the client.
+
+## Affected Endpoint
+
+```text
+POST /register
+```
+
+## Testing Methodology
+
+1. Captured the registration request using Burp Suite.
+2. Reviewed the JSON parameters accepted by the endpoint.
+3. Identified security-sensitive fields such as `is_admin` and `balance`.
+4. Added these fields to the registration request.
+5. Sent the modified request to the application.
+6. Analyzed the HTTP response to determine whether the server accepted the supplied values.
+7. Logged into the newly created account and checked whether elevated privileges were granted.
+
+
+## Observation
+
+The server returned a successful response and reflected the supplied security-sensitive attributes.
+
+The response indicated that the newly registered account had:
+
+```text
+is_admin: true
+balance: 1000000.0
+```
+
+The application also exposed additional debug information in the response, including registered fields and raw user data.
+
+### Evidence
+
+![Before Privelege_Escalation](Screenshots/Privelege_Escalation/Privelege_Escalation_1.png)
+
+![Added Parameters](Screenshots/Privelege_Escalation/Privelege_Escalation_2.png)
+
+![Admin Privilege](Screenshots/Privelege_Escalation/Privelege_Escalation_3.png)
+
+## Security Impact
+
+An attacker may be able to modify attributes that should only be controlled by the server.
+
+In this case, the client was able to influence the `is_admin` attribute during registration.
+
+Potential impact includes:
+
+* Unauthorized administrative privileges
+* Privilege escalation
+* Unauthorized access to administrative functionality
+* Manipulation of account attributes
+* Potential financial manipulation through client-controlled balance values
+
+
+
+## Result
+
+The Vulnerable Bank registration functionality was found to be susceptible to Privelege_Escalation.
+
+By adding security-sensitive parameters to the registration request, the application accepted client-controlled values for privileged account attributes.
+
+The resulting account was assigned administrative privileges, demonstrating a potential **privilege escalation** vulnerability.
+
+The assessment was performed against the Vulnerable Bank application in a controlled local lab environment.
