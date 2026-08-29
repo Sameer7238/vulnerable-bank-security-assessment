@@ -22,20 +22,20 @@ in an isolated local WSL environment.
 | Environment | WSL |
 | Target | Vulnerable Bank |
 | Proxy | Burp Suite |
-| Scanner | Nmap |
 
 
-## 🔍 Vulnerabilities
 
-Testing will include:
+## Vulnerability Summary
 
-- Brute Force
-- Cross-Site Scripting (XSS)
-- Cross-Site Request Forgery (CSRF)
-- SQL Injection
-- Broken Access Control
-- Session Management
-- Security Misconfiguration
+| # | Vulnerability | Severity | CVSS v3.1 |
+|---|---|---|---:|
+| 1 | Brute Force | Medium | 6.5 | 
+| 2 | Unrestricted File Upload | High | 8.8 | 
+| 3 | IDOR | High | 8.1 | 
+| 4 | Privilege Escalation | High | 8.8 | 
+| 5 | Race Condition | High | 7.5 | 
+| 6 | SQL Injection (SQLi) | Critical | 9.8 |
+| 7 | Cross-Site Scripting (XSS) | Medium | 6.1 | 
 
 
 ## ⚠️ Disclaimer
