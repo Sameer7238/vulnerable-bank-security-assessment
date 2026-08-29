@@ -1,4 +1,4 @@
-Recommended remediation steps:
+## Remediation 
 
 1. Implement context-aware output encoding for all user-controlled data.
 2. Use the web framework's built-in HTML escaping mechanisms.
