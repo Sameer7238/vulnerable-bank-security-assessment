@@ -64,6 +64,4 @@ The Vulnerable Bank registration functionality was found to be susceptible to Pr
 
 By adding security-sensitive parameters to the registration request, the application accepted client-controlled values for privileged account attributes.
 
-The resulting account was assigned administrative privileges, demonstrating a potential **privilege escalation** vulnerability.
-
 The assessment was performed against the Vulnerable Bank application in a controlled local lab environment.
