@@ -6,13 +6,13 @@ in an isolated local WSL environment.
 
 ## 🎯 Objectives
 
-- Identify common web application vulnerabilities
-- Analyze HTTP requests and responses
-- Practice manual security testing with Burp Suite
-- Map findings to the OWASP Top 10
-- Document vulnerabilities and their impact
-- Recommend security remediation
-- Analyze selected attacks from a SOC perspective
+- Identified common web application vulnerabilities
+- Analyzed HTTP requests and responses
+- Practiced manual security testing with Burp Suite
+- Mapped findings to the OWASP Top 10
+- Documented vulnerabilities and their impact
+- Recommended security remediation
+- Analyzed selected attacks from a SOC perspective
 
 ## 🧪 Lab Environment
 
